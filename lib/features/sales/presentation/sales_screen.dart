@@ -145,7 +145,7 @@ class _SalesScreenState extends State<SalesScreen>
             width: double.infinity,
             padding: const EdgeInsets.all(AppSpacing.md),
             decoration: BoxDecoration(
-              color: AppTheme.primaryGreen.withOpacity(0.1),
+              color: AppTheme.primaryGreen.withValues(alpha: 0.1),
               borderRadius: BorderRadius.circular(AppBorderRadius.medium),
             ),
             child: Column(

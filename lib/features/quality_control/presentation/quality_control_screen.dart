@@ -250,7 +250,7 @@ class _QualityControlScreenState extends State<QualityControlScreen>
                 ),
                 const SizedBox(height: AppSpacing.md),
                 Text(
-                  'Puntuación de Calidad: $qualityScore/5',
+                  'Puntuación de Calidad: $qualityScore/5 ($freshnessLevel)',
                   style: AppTextStyles.bodyMedium,
                 ),
                 Slider(
@@ -262,11 +262,17 @@ class _QualityControlScreenState extends State<QualityControlScreen>
                   onChanged: (value) {
                     setState(() {
                       qualityScore = value.round();
-                      if (qualityScore == 5) freshnessLevel = 'Excelente';
-                      else if (qualityScore == 4) freshnessLevel = 'Bueno';
-                      else if (qualityScore == 3) freshnessLevel = 'Regular';
-                      else if (qualityScore == 2) freshnessLevel = 'Malo';
-                      else freshnessLevel = 'Crítico';
+                      if (qualityScore == 5) {
+                        freshnessLevel = 'Excelente';
+                      } else if (qualityScore == 4) {
+                        freshnessLevel = 'Bueno';
+                      } else if (qualityScore == 3) {
+                        freshnessLevel = 'Regular';
+                      } else if (qualityScore == 2) {
+                        freshnessLevel = 'Malo';
+                      } else {
+                        freshnessLevel = 'Crítico';
+                      }
                     });
                   },
                 ),
